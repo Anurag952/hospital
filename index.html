@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="" -->
+    <!-- <link href> -->
+    <!-- <script src=""> </script> -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body bgcolor="grey">
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <h1>Central Care</h1>
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="#service">Service's</a></li>
+                <li><a href="#doctor">Doctor's</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#appointment">Appointment</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="main">
+            <img src="main.png" alt="">
+            <div class="mainText">
+                <h1>Care With Best Centrall Care</h1>
+                <p>Experience a higher standard of care. Best Central Care puts you at the center of your healthcare journey, prioritizing your comfort, safety, and dignity.</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+
+        <div id="service">
+            <div class="head">
+                <h1>Our Service's</h1>
+            </div>
+            <div class="service">
+
+                <div class="serviceCard">
+                    <img src="chest.webp" alt="">
+                    <p>Chest and Respiratory</p>
+                </div>
+                <div class="serviceCard">
+                    <img src="laboratory.webp" alt="">
+                    <p>laboratory</p>
+                </div>
+                <div class="serviceCard">
+                    <img src="physio.webp" alt="">
+                    <p>Physiotherapy</p>
+                </div>
+                <div class="serviceCard">
+                    <img src="nutrition.webp" alt="">
+                    <p>nutrition</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="doctor">
+            <div class="head">
+                <h1>Our Doctor's</h1>
+            </div>
+            <div class="slider">
+                <span id="slide-1"></span>
+                <span id="slide-2"></span>
+                <span id="slide-3"></span>
+                <span id="slide-4"></span>
+                <span id="slide-5"></span>
+                <span id="slide-6"></span>
+                <span id="slide-7"></span>
+                <span id="slide-8"></span>
+                <div class="image-container" id="autoSlide">
+                <img src="d1.jpg" class="slide" width="500" height="300" style="display: none;">
+                <img src="d2.jpg" class="slide" width="500" height="300" style="display: none;">
+                <img src="d3.jpg" class="slide" width="500" height="300" style="display: block;">
+                <img src="d4.jpg" class="slide" width="500" height="300" style="display: none;">
+                <img src="d5.jpg" class="slide" width="500" height="300" style="display: none;">
+                <img src="d6.jpg" class="slide" width="500" height="300" style="display: none;">
+                <img src="d7.jpg" class="slide" width="500" height="300" style="display: none;">
+                <img src="d9.jpg" class="slide" width="500" height="300" style="display: none;">
+                </div>
+                <div class="buttons">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+                <a href="#slide-5"></a>
+                <a href="#slide-6"></a>
+                <a href="#slide-7"></a>
+                <a href="#slide-8"></a>
+                </div>
+            </div>
+                
+        
+        </div>
+
+        <div id="blog">
+            <div class="head">
+                <h1>Read Blog</h1>
+            </div>
+            <div class="blogs">
+                <div class="blogCard">
+                    <img src="bl1.jfif" alt="">
+                    <h2>Health Care</h2>
+                    <a href="">Read More</a>
+                </div>
+                <div class="blogCard">
+                    <img src="bl2.jpg" alt="">
+                    <h2>Health Care</h2>
+                    <a href="">Read More</a>
+                </div>
+                <div class="blogCard">
+                    <img src="bl3.webp" alt="">
+                    <h2>Health Care</h2>
+                    <a href="">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="appointment">
+            <div class="head">
+                <h1>Book An Appointment</h1>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Enter Name">
+                <input type="text" placeholder="Enter Number">
+                <input type="date">
+                <input type="time" >
+                <button>Submit</button>
+
+            </div>
+        </div>
+
+        <div class="footer">
+
+            <div class="text">
+                <h2>Care</h2>
+                <p>Facility</p>
+                <p>Reviews</p>
+                <p>Support</p>
+                <p>Staff</p>
+
+            </div>
+            <div class="text">
+                <h2>Address</h2>
+                <p>Knowledge Park 3</p>
+                <p>Greater Noida</p>
+                <p>201306</p>
+                <p>maps on</p>
+
+            </div>
+            <div class="text">
+                <h2>Connect Us</h2>
+                <p>LinkedIn</p>
+                <p>YouTube</p>
+                <p>Facebook</p>
+                <p>Instagram</p>
+
+            </div>
+        </div>
+    <!-- <scrypt src=""></scrypt> -->
+</body>
+<script>
+    let doctors = document.querySelectorAll(".team");
+let card = document.querySelectorAll(".serviceCard");
+let count = 0;
+doctors.forEach(function(card, index){
+    card.computedStyleMap.left= '${index*100}%'
+})
+function myFun(){
+    doctors.forEach(function(curvalue){
+        curvalue.Style.transform='translateX(-${count * 100}%)'
+    })
+}
+setInterval(function(){
+    count++
+    if(count == doctors.length){
+        count=o;
+    }
+    myFun()
+}, 3000)
+// service Card
+card.forEach(function(curCard){
+    curCard.addEventListener("click", function(){
+        console.log(curCard);
+        let div = document.createElement("div");
+        div.classList.add("detailcard");
+        div.innerHTML=`
+        <img src=${curCard.firstElementChild.src} alt="">
+        <h2>${curCard.lastElementChild.innerHTMLs}</h2>
+        <p>Lorem ipsujhgfgfhjkgfdghjkgftdrggkhysut </p>
+        `
+        document.querySelector("body").appendChild(div)
+    })
+})
+
+
+let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("slide");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+</script>
+</html>
